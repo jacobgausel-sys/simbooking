@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="no">
+<head> <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariannes Golfsimulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<div id="app">
+    <div class="golf-banner">
+        <div class="golf-scene">
+            <span class="flag">⛳</span>
+            <div class="ball"></div>
+        </div>
+        <h1>Marianne’s Golfsimulator</h1>
+        <p>Velg dag og tid for å booke</p>
+    </div>
+
+    <div class="content-area">
+        <div class="calendar-nav">
+            <button onclick="changeDate(-1)">◀ Forrige dag</button>
+            <h2 id="currentDateDisplay">Laster dato...</h2>
+            <button onclick="changeDate(1)">Neste dag ▶</button>
+        </div>
+        <div id="timeslots" class="grid"></div>
+    </div>
+</div>
+
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <h3>Book kl. <span id="selectedSlotText"></span></h3>
+        <input type="text" id="userName" placeholder="Skriv ditt navn her...">
+        <div class="modal-buttons">
+            <button class="save-btn" onclick="saveBooking()">Lagre booking</button>
+            <button class="cancel-btn" onclick="closeModal()">Avbryt</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
