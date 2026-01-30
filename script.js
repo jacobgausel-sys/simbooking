@@ -50,8 +50,17 @@ function closeModal() {
 
 async function saveBooking() {
     const nameInput = document.getElementById('userName');
+    const passwordInput = document.getElementById('userPassword'); // Henter passord-boksen
     const name = nameInput.value;
+    const password = passwordInput.value; // Henter det du har skrevet
+
     if (!name) return alert("Skriv navn!");
+    
+    // Her bestemmer du passordet (f.eks. Marianne2026)
+    if (password !== "Mariannesim2026") { 
+        alert("Feil passord! Du må ha riktig passord for å booke.");
+        return; // Stopper her hvis passordet er feil
+    }
 
     await _supabase.from('bookings').insert([{
         date: currentDate.toISOString().split('T')[0],
@@ -61,8 +70,11 @@ async function saveBooking() {
 
     closeModal();
     nameInput.value = "";
+    passwordInput.value = ""; // Tømmer passordfeltet etterpå
     fetchAndRender();
 }
+
+   
 
 async function deleteBooking(id, event) {
     event.stopPropagation();
