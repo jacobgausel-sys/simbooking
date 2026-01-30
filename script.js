@@ -11,10 +11,10 @@ async function fetchAndRender() {
     const display = document.getElementById('currentDateDisplay');
     
     if (display) {
+        const options = { weekday: 'long', day: 'numeric', month: 'long' };
         const dateString = currentDate.toLocaleDateString('no-NO', options);
-dateDisplay.innerHTML = dateString.replace(' ', '<br>');
-            weekday: 'long', day: 'numeric', month: 'long' 
-        });
+        // Bruk variabelen 'display' her
+        display.innerHTML = dateString.replace(' ', '<br>');
     }
 
     const { data: bookings } = await _supabase.from('bookings').select('*').eq('date', dateKey);
