@@ -89,3 +89,9 @@ body {
 .save-btn { background: #55a630; color: white; border: none; padding: 15px; border-radius: 12px; font-weight: bold; cursor: pointer; }
 .cancel-btn { background: #e2e8f0; border: none; padding: 15px; border-radius: 12px; cursor: pointer; }
 .delete-btn { background: white; color: black; border: 1px solid black; padding: 4px 8px; font-size: 10px; margin-top: 5px; cursor: pointer; }
+
+#currentDateDisplay {
+  text-align: center;
+  line-height: 1.2; /* Gjør avstanden mellom linjene tett og fin */
+  flex-grow: 1;    /* Sørger for at datoen tar plassen i midten */
+}

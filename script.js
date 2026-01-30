@@ -11,7 +11,8 @@ async function fetchAndRender() {
     const display = document.getElementById('currentDateDisplay');
     
     if (display) {
-        display.innerText = currentDate.toLocaleDateString('no-NO', { 
+        const dateString = currentDate.toLocaleDateString('no-NO', options);
+dateDisplay.innerHTML = dateString.replace(' ', '<br>');
             weekday: 'long', day: 'numeric', month: 'long' 
         });
     }
