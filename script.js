@@ -57,7 +57,7 @@ async function saveBooking() {
     if (!name) return alert("Skriv navn!");
     
     // Her bestemmer du passordet (f.eks. Marianne2026)
-    if (password !== "Mariannesim2026") { 
+    if (password !== "sim2026") { 
         alert("Feil passord! Du må ha riktig passord for å booke.");
         return; // Stopper her hvis passordet er feil
     }
